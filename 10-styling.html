@@ -23,6 +23,11 @@
       width: 90px;
       height: 90px;
     }
+
+    .box--huge{
+      width: 480px;
+      height: 480px;
+    }
   </style>
   <script type="text/babel">
     function Box({style, size, className = '', ...rest}) {
@@ -47,7 +52,8 @@
         <Box size="large" style={{backgroundColor: 'orange'}}>
           large orange box
         </Box>
-        <Box>sizeless box</Box>
+        <Box size="huge" style={{backgroundColor: 'purple'}}>
+          My purple Box</Box>
       </div>
     )
 

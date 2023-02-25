@@ -1,10 +1,36 @@
 <body>
   <div id="root"></div>
-  <script type="text/javascript">
-    const rootElement = document.getElementById('root')
-    const element = document.createElement('div')
-    element.textContent = 'Hello World'
-    element.className = 'container'
-    rootElement.appendChild(element)
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+  <style>
+    .box--medium{
+      width: 180px;
+      height: 180px;
+    }</style>
+  function Box({
+    className='', style, size, ...rest  }) {
+      const sizeClassName = size ? `box--${size}` : ''
+      return(
+        <div
+        className={`box box--medium ${className} ${sizeClassName}`}
+        style={{fontStyle: 'italic', ...style}}
+        {...rest}
+        />
+      )
+    }
+  const element = (
+  <div>
+    <Box size="medium" style={{backgroudColor: 'purple'}}>
+      medium purple box
+      </Box>
+    </div>
+  )
+  ReactDOM.render(element, document.getElementById('root'))
+  // const element = document.createElement('div')
+  // element.textContent = 'Hello World'
+  // element.className = 'container'
+  // rootElement.appendChild(element)
   </script>
 </body>
